@@ -1,4 +1,4 @@
 enablePlugins(ScalaJSPlugin)
 
-name := "json-to-scala"
+name := "jsontoscala"
 scalaVersion := "2.11.8"
