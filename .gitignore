@@ -19,3 +19,10 @@ project/plugins/project/
 # Scala-IDE specific
 .scala_dependencies
 .worksheet
+# Created by https://www.gitignore.io/api/ensime
+
+### Ensime ###
+# Ensime specific
+.ensime
+.ensime_cache/
+.ensime_lucene/
