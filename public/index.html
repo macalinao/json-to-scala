@@ -12,7 +12,7 @@
       <p>
         This tool converts JSON data into a set of Scala case classes. Paste a JSON blob on the left and the equivalent Scala code will be generated on the right, which you can paste into your program. This can easily be used with <a href="https://github.com/json4s/json4s#extracting-values">JSON4S</a>. This tool was written using <a href="https://www.scala-js.org/">ScalaJS</a>.
 
-        Caveats:
+        <p>A few caveats:</p>
         <ul>
           <li>Nulls are handled with the <code>Any</code> type. Fix this with an <code>Option</code> or something equivalent.</li>
           <li>All numbers use Scala <code>Double</code>s or <code>Int</code>s. You may want to use some other number type.</li>
