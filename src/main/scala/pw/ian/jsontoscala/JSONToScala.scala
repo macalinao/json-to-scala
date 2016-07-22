@@ -18,9 +18,9 @@ case class DictType(
 ) extends Type {
   def toCaseClass(): String = {
     List(
-      s"case class ${name} {",
+      s"case class ${name} (",
       fields.toList.map {  case (key, t) => s"  ${key}: ${t.name()}" }.reduce(_ + ",\n" + _),
-      "}"
+      ")"
      ).reduce(_ + "\n" + _)
   }
 }
