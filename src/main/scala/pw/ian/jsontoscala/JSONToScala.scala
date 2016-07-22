@@ -30,16 +30,16 @@ case class NamedType(
 ) extends Type
 
 class TypeFinder(val obj: js.Any) {
-  var types: Set[DictType] = Set[DictType]()
+  var types: List[DictType] = List[DictType]()
 
-  def findTypes(): Set[DictType] = {
+  def findTypes(): List[DictType] = {
     maybeRegister(findType("Thing", obj))
     return types
   }
 
   def maybeRegister(t: Type): Type = {
     if (t.isInstanceOf[DictType]) {
-      types += t.asInstanceOf[DictType]
+      types ::= t.asInstanceOf[DictType]
     }
     return t
   }
@@ -67,8 +67,8 @@ class TypeFinder(val obj: js.Any) {
 
 object JSONToScala {
 
-  /** Convert converts a JSON string to a set of Scala case classes. */
-  def convert(json: String): Set[String] = {
+  /** Convert converts a JSON string to a list of Scala case classes. */
+  def convert(json: String): List[String] = {
     val obj = js.JSON.parse(json)
     return (new TypeFinder(obj)).findTypes().map(_.toCaseClass())
   }
