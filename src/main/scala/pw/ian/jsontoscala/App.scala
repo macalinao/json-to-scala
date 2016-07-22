@@ -11,7 +11,12 @@ object App {
   def doConvert(source: String, dest: String): Unit = {
     val src = document.getElementById(source).asInstanceOf[dom.raw.HTMLTextAreaElement]
     val tgt = document.getElementById(dest).asInstanceOf[dom.raw.HTMLElement]
-    tgt.innerHTML = JSONToScala.convert(src.value).reduce(_ + "\n\n" + _)
+    val classes = JSONToScala.convert(src.value)
+    if (classes.length > 0) {
+      tgt.innerHTML = classes.reduce(_ + "\n\n" + _)
+    } else {
+      tgt.innerHTML = "No classes found"
+    }
   }
 
 }

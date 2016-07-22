@@ -23,6 +23,14 @@ case class DictType(
       ")"
      ).reduce(_ + "\n" + _)
   }
+
+  override def equals(other: Any): Boolean = {
+    other match {
+      case x: DictType => Set(fields.keys) == Set(x.fields.keys)
+      case _ => false
+    }
+  }
+
 }
 
 case class NamedType(
@@ -39,7 +47,11 @@ class TypeFinder(val obj: js.Any) {
 
   def maybeRegister(t: Type): Type = {
     if (t.isInstanceOf[DictType]) {
-      types ::= t.asInstanceOf[DictType]
+      val d = t.asInstanceOf[DictType]
+      types.find(_ == d) match {
+        case Some(_) => {}
+        case _ => types ::= d
+      }
     }
     return t
   }
