@@ -2286,23 +2286,43 @@ $c_Lpw_ian_jsontoscala_TypeFinder.prototype.findType__T__O__Lpw_ian_jsontoscala_
   if ($uZ($g.Array.isArray(obj))) {
     return new $c_Lpw_ian_jsontoscala_ArrayType().init___Lpw_ian_jsontoscala_Type(this.findType__T__O__Lpw_ian_jsontoscala_Type(this.capitalize__T__T(key), obj[0]))
   };
-  if (((typeof obj) === "boolean")) {
-    var jsx$1 = new $c_Lpw_ian_jsontoscala_NamedType().init___T("Boolean")
-  } else if ($is_T(obj)) {
-    var jsx$1 = new $c_Lpw_ian_jsontoscala_NamedType().init___T("String")
-  } else if (((typeof obj) === "number")) {
-    var jsx$1 = new $c_Lpw_ian_jsontoscala_NamedType().init___T("Double")
-  } else if ((obj === null)) {
-    var jsx$1 = new $c_Lpw_ian_jsontoscala_NamedType().init___T("Any")
-  } else {
+  var rc7 = false;
+  var x4 = 0.0;
+  matchEnd8: {
+    var jsx$1;
+    if (((typeof obj) === "boolean")) {
+      var jsx$1 = new $c_Lpw_ian_jsontoscala_NamedType().init___T("Boolean");
+      break matchEnd8
+    };
+    if ($is_T(obj)) {
+      var jsx$1 = new $c_Lpw_ian_jsontoscala_NamedType().init___T("String");
+      break matchEnd8
+    };
+    if (((typeof obj) === "number")) {
+      rc7 = true;
+      x4 = $uD(obj);
+      var a = x4;
+      if (($uD($g.Math.floor(a)) !== x4)) {
+        var jsx$1 = new $c_Lpw_ian_jsontoscala_NamedType().init___T("Double");
+        break matchEnd8
+      }
+    };
+    if (rc7) {
+      var jsx$1 = new $c_Lpw_ian_jsontoscala_NamedType().init___T("Int");
+      break matchEnd8
+    };
+    if ((obj === null)) {
+      var jsx$1 = new $c_Lpw_ian_jsontoscala_NamedType().init___T("Any");
+      break matchEnd8
+    };
     var jsx$2 = this.capitalize__T__T(key);
     var b = new $c_scm_MapBuilder().init___sc_GenMap($m_sci_Map$EmptyMap$());
-    var this$3 = new $c_sjs_js_WrappedDictionary$DictionaryIterator().init___sjs_js_Dictionary(obj);
-    while (this$3.hasNext__Z()) {
-      var arg1 = this$3.next__T2();
+    var this$4 = new $c_sjs_js_WrappedDictionary$DictionaryIterator().init___sjs_js_Dictionary(obj);
+    while (this$4.hasNext__Z()) {
+      var arg1 = this$4.next__T2();
       b.$$plus$eq__T2__scm_MapBuilder(arg1)
     };
-    var this$5 = $as_sci_Map(b.elems$1);
+    var this$6 = $as_sci_Map(b.elems$1);
     var f = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(arg$outer) {
       return (function(x0$2$2) {
         var x0$2 = $as_T2(x0$2$2);
@@ -2315,9 +2335,10 @@ $c_Lpw_ian_jsontoscala_TypeFinder.prototype.findType__T__O__Lpw_ian_jsontoscala_
         }
       })
     })(this));
-    var this$4 = $m_sci_Map$();
-    var bf = new $c_scg_GenMapFactory$MapCanBuildFrom().init___scg_GenMapFactory(this$4);
-    var jsx$1 = new $c_Lpw_ian_jsontoscala_DictType().init___T__sci_Map(jsx$2, $as_sci_Map($s_sc_TraversableLike$class__map__sc_TraversableLike__F1__scg_CanBuildFrom__O(this$5, f, bf)))
+    var this$5 = $m_sci_Map$();
+    var bf = new $c_scg_GenMapFactory$MapCanBuildFrom().init___scg_GenMapFactory(this$5);
+    var jsx$1 = new $c_Lpw_ian_jsontoscala_DictType().init___T__sci_Map(jsx$2, $as_sci_Map($s_sc_TraversableLike$class__map__sc_TraversableLike__F1__scg_CanBuildFrom__O(this$6, f, bf)));
+    break matchEnd8
   };
   return this.maybeRegister__Lpw_ian_jsontoscala_Type__Lpw_ian_jsontoscala_Type(jsx$1)
 });

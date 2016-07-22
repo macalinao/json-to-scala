@@ -1,0 +1,31 @@
+html, body {
+  font-family: -apple-system, Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-size: 2em; 
+}
+
+h2 {
+  font-size: 1.4em;
+}
+
+header {
+  padding: 1em;
+}
+
+section {
+  display: flex;
+  height: 50%;
+}
+
+textarea#source, pre#dest {
+  width: 50%;
+}
+
+textarea#source {
+}
+
+pre#dest {
+  width: 50%;
+}
