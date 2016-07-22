@@ -26,5 +26,3 @@ project/plugins/project/
 .ensime
 .ensime_cache/
 .ensime_lucene/
-
-dist/
