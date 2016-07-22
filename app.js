@@ -8185,7 +8185,7 @@ $c_Lpw_ian_jsontoscala_DictType.prototype.init___T__sci_Map = (function(name, fi
 });
 $c_Lpw_ian_jsontoscala_DictType.prototype.toCaseClass__T = (function() {
   $m_sci_List$();
-  var jsx$2 = new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["case class ", " {"])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.name$1]));
+  var jsx$2 = new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["case class ", " ("])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.name$1]));
   var this$1 = this.fields$1;
   var this$2 = $m_sci_List$();
   var cbf = this$2.ReusableCBFInstance$2;
@@ -8237,7 +8237,7 @@ $c_Lpw_ian_jsontoscala_DictType.prototype.toCaseClass__T = (function() {
     var x$2 = $as_T(x$2$2);
     return ((x$1 + ",\n") + x$2)
   }));
-  var xs = new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$2, $as_T(this$7.reduceLeft__F2__O(op)), "}"]);
+  var xs = new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$2, $as_T(this$7.reduceLeft__F2__O(op)), ")"]);
   var this$9 = $m_sci_List$();
   var cbf$1 = this$9.ReusableCBFInstance$2;
   var this$10 = $as_sci_List($s_sc_TraversableLike$class__to__sc_TraversableLike__scg_CanBuildFrom__O(xs, cbf$1));
