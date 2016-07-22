@@ -16,11 +16,13 @@ header {
 
 section {
   display: flex;
-  height: 50%;
+  height: 500px;
 }
 
 textarea#source, pre#dest {
   width: 50%;
+  height: 100%;
+  overflow-y: scroll;
 }
 
 textarea#source {
