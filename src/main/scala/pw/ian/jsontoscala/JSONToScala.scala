@@ -56,6 +56,7 @@ class TypeFinder(val obj: js.Any) {
       case _: Boolean => NamedType("Boolean")
       case _: String => NamedType("String")
       case _: Double => NamedType("Double")
+      case x if x == null => NamedType("Any")
       case dict =>
         DictType(capitalize(key), dict.asInstanceOf[js.Dictionary[js.Any]].toMap.map {
           case (key, value) => (key, findType(key, value))

@@ -10,7 +10,7 @@ object App {
   @JSExport
   def doConvert(source: String, dest: String): Unit = {
     val src = document.getElementById(source).asInstanceOf[dom.raw.HTMLTextAreaElement]
-    val tgt = document.getElementById(dest).asInstanceOf[dom.raw.HTMLDivElement]
+    val tgt = document.getElementById(dest).asInstanceOf[dom.raw.HTMLElement]
     tgt.innerHTML = JSONToScala.convert(src.value).reduce(_ + "\n\n" + _)
   }
 
